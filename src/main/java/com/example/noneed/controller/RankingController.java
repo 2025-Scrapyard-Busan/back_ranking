@@ -1,5 +1,6 @@
 package com.example.noneed.controller;
 
+import com.example.noneed.dto.RankingResponse;
 import com.example.noneed.entity.Ranking;
 import com.example.noneed.service.RankingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/rankings")
+@CrossOrigin(origins = "*")
 public class RankingController {
     @Autowired
     private RankingService rankingService;
@@ -16,7 +18,7 @@ public class RankingController {
         return rankingService.saveRanking(ranking);
     }
     @GetMapping
-    public List<Ranking> getRankings() {
+    public List<RankingResponse> getRankings() {
         return rankingService.getRankings();
     }
 }
