@@ -11,7 +11,6 @@ public class Ranking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String profilePicture;
     private String nickname;
     private int clearTime;
     private double shining;
